@@ -1,6 +1,6 @@
-var mermaidRegex = /^```mermaid((.*\n)+?)?```$/im;
+var mermaidRegex = /^```mermaid((.*[\r\n]+)+?)?```$/im;
 var pluginName = 'mermaid-2';
-var mermainReleasedAssets = '/plugins/gitbook-plugin-mermaid-2/bower_components/mermaid/dist/';
+var mermainReleasedAssets = '/plugins/gitbook-plugin-mermaid-2/node_modules/mermaid/dist/';
 
 function processMermaidBlockList(page) {
 
@@ -26,9 +26,9 @@ function addCss(filePath) {
 
 module.exports = {
   website: {
-    assets: './book',
+    assets: './',
     css: [
-      'bower_components/mermaid/dist/mermaid.css'
+      'node_modules/mermaid/dist/mermaid.css'
     ],
     js: [
       'plugin.js'

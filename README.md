@@ -7,14 +7,14 @@ Plugin for [GitBook](https://github.com/GitbookIO/gitbook) which renders [Mermai
 You can use install via **NPM**:
 
 ```
-$ npm install gitbook-plugin-mermaid-2
+$ npm install gitbook-plugin-mermaid-compat
 ```
 
 And use it for your book with in the book.json:
 
 ```
 {
-    "plugins": ["mermaid-2"],
+    "plugins": ["mermaid-compat"],
     "pluginsConfig": {
       "mermaid-2": {
          "theme": "forest" // here to change the mermaid theme
