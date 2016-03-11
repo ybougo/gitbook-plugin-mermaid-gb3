@@ -1,6 +1,6 @@
 var mermaidRegex = /^```mermaid((.*[\r\n]+)+?)?```$/im;
-var pluginName = 'mermaid-2';
-var mermainReleasedAssets = '/plugins/gitbook-plugin-mermaid-2/node_modules/mermaid/dist/';
+var pluginName = 'mermaid-compat';
+var mermainReleasedAssets = '/plugins/gitbook-plugin-mermaid-compat/node_modules/mermaid/dist/';
 
 function processMermaidBlockList(page) {
 
