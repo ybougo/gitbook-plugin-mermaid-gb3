@@ -16,7 +16,7 @@ And use it for your book with in the book.json:
 {
     "plugins": ["mermaid-compat"],
     "pluginsConfig": {
-      "mermaid-2": {
+      "mermaid-compat": {
          "theme": "forest" // here to change the mermaid theme
       }
     }
@@ -27,10 +27,10 @@ And use it for your book with in the book.json:
 
 Just put the code into fenced code block and tag it **mermaid** key word like this:
 
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
-```
+    ```mermaid
+    graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+    ```
