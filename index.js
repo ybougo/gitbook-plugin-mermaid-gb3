@@ -31,7 +31,7 @@ module.exports = {
       'node_modules/mermaid/dist/mermaid.css'
     ],
     js: [
-      'plugin.js'
+      'book/plugin.js'
     ],
     html: {
       'head:end': function (options) {
