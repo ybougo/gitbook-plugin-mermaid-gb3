@@ -1,6 +1,6 @@
 var mermaidRegex = /^```mermaid((.*[\r\n]+)+?)?```$/im;
 var pluginName = 'mermaid-compat';
-var mermainReleasedAssets = '/plugins/gitbook-plugin-mermaid-compat/node_modules/mermaid/dist/';
+var mermainReleasedAssets = '/plugins/gitbook-plugin-mermaid-compat/mermaid/';
 
 function processMermaidBlockList(page) {
 
@@ -26,9 +26,9 @@ function addCss(filePath) {
 
 module.exports = {
   website: {
-    assets: './',
+    assets: './dist',
     css: [
-      'node_modules/mermaid/dist/mermaid.css'
+      'mermaid/mermaid.css'
     ],
     js: [
       'book/plugin.js'
