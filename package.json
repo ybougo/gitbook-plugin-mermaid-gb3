@@ -2,15 +2,15 @@
   "name": "gitbook-plugin-mermaid-compat",
   "description": "Plugin for GitBook which renders Mermaid flow from markdown. Tries to work cross platform (windows/unix)",
   "main": "index.js",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "engines": {
     "gitbook": "*"
   },
   "scripts": {
-    "clean" : "rimraf dist",
-    "build" : "npm run clean && npm run copy:assets && npm run copy:book",
-    "copy:assets" : "mkdir -p dist/mermaid && cp ./node_modules/mermaid/dist/{mermaid.min.js,mermaid*.css} dist/mermaid",
-    "copy:book" : "mkdir -p dist/book && cp -R book/ dist/book"
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run copy:assets && npm run copy:book",
+    "copy:assets": "mkdir -p dist/mermaid && cp ./node_modules/mermaid/dist/{mermaid.min.js,mermaid*.css} dist/mermaid",
+    "copy:book": "mkdir -p dist/book && cp -R book/ dist/book"
   },
   "dependencies": {
     "mermaid": "^0.5.8"
