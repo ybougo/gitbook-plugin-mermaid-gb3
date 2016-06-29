@@ -1,25 +1,20 @@
-## Mermaid plugin for GitBook 
+## Mermaid plugin for GitBook
 
-Plugin for [GitBook](https://github.com/GitbookIO/gitbook) which renders [Mermaid](https://github.com/knsv/mermaid) diagrams and flow charts detected in the book markdown.
+Plugin for [GitBook](https://github.com/GitbookIO/gitbook) 3 which renders [Mermaid](https://github.com/knsv/mermaid) diagrams and flow charts detected in the book markdown.
 
 ### How to install it?
 
 You can use install via **NPM**:
 
 ```
-$ npm install gitbook-plugin-mermaid-compat
+$ npm install gitbook-plugin-mermaid-gb3
 ```
 
 And use it for your book with in the book.json:
 
 ```
 {
-    "plugins": ["mermaid-compat"],
-    "pluginsConfig": {
-      "mermaid-compat": {
-         "theme": "forest" // here to change the mermaid theme
-      }
-    }
+  "plugins": ["mermaid-gb3"]
 }
 ```
 

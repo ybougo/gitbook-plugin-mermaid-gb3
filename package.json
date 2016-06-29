@@ -1,8 +1,8 @@
 {
-  "name": "gitbook-plugin-mermaid-compat",
-  "description": "Plugin for GitBook which renders Mermaid flow from markdown. Tries to work cross platform (windows/unix)",
+  "name": "gitbook-plugin-mermaid-gb3",
+  "description": "Plugin for GitBook 3 which renders Mermaid flow from markdown. Tries to work cross platform (windows/unix)",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "engines": {
     "gitbook": "*"
   },
