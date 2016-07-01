@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-mermaid-gb3",
   "description": "Plugin for GitBook 3 which renders Mermaid flow from markdown. Tries to work cross platform (windows/unix)",
   "main": "index.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "gitbook": "*"
   },
@@ -20,12 +20,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rakis/gitbook-plugin-mermaid-compat.git"
+    "url": "git+https://github.com/chriswessels/gitbook-plugin-mermaid-gb3.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rakis/gitbook-plugin-mermaid-compat/issues"
-  },
-  "homepage": "https://github.com/rakis/gitbook-plugin-mermaid-compat#readme"
+  "homepage": "https://github.com/chriswessels/gitbook-plugin-mermaid-gb3#readme"
 }
