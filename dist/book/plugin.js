@@ -1,7 +1,8 @@
-require([
-  'gitbook'
-], function (gitbook) {
+require(['gitbook'], function (gitbook) {
   gitbook.events.bind('page.change', function () {
-    mermaid.init();
+    // wait loading
+    setTimeout(() => {
+      mermaid.init();
+    }, 500);
   });
 });
