@@ -2,7 +2,7 @@
   "name": "honkit-plugin-mermaid",
   "description": "Plugin for honkit which renders Mermaid flow from markdown.",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "honkit": "*"
   },

@@ -8,7 +8,7 @@ function processMermaidBlockList(page) {
     const mermaidContent = match[1];
     page.content = page.content.replace(
       rawBlock,
-      '<div class="mermaid">' + mermaidContent + '</div>'
+      '<div class="mermaid">' + mermaidContent.replace('<|--', 'class_diagram_inheritance') + '</div>'
     );
   }
 
