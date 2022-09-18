@@ -2,7 +2,6 @@ const mermaidRegex = /^```mermaid((.*[\r\n]+)+?)?```$/im;
 
 function processMermaidBlockList(page) {
   let match;
-
   while ((match = mermaidRegex.exec(page.content))) {
     const rawBlock = match[0];
     const mermaidContent = match[1];
@@ -11,7 +10,6 @@ function processMermaidBlockList(page) {
       '<div class="mermaid">' + mermaidContent.replace('<|--', 'class_diagram_inheritance') + '</div>'
     );
   }
-
   return page;
 }
 
