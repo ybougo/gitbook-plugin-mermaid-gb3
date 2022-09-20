@@ -1,16 +1,17 @@
 {
-  "name": "honkit-plugin-mermaid",
+  "name": "honkit-plugin-mermaid-md-adoc",
   "description": "Plugin for honkit which renders Mermaid flow from markdown.",
   "main": "dist/index.js",
-  "version": "0.0.3",
+  "files": ["./dist"],
+  "version": "0.0.4",
   "engines": {
     "honkit": "*"
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "yarn copy:src && yarn copy:assets",
-    "copy:src": "mkdirp dist && cpx src/** dist",
-    "copy:assets": "mkdirp dist/assets && cpx ./node_modules/mermaid/dist/mermaid.min.js* dist/assets",
+    "build": "yarn copy:src && yarn copy:mermaid",
+    "copy:src": "mkdirp dist && cpx 'src/**' dist",
+    "copy:mermaid": "mkdirp dist/assets && cpx './node_modules/mermaid/dist/mermaid.min.js*' dist/assets",
     "prepare": "husky install"
   },
   "devDependencies": {
