@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "eslint:recommended",
+  "overrides": [],
+  "rules": {},
+  "parserOptions": {
+    "ecmaVersion": 13
+  },
+  "globals": {
+    "module": "readonly",
+    "require": "readonly",
+    "mermaid": "readonly"
+  }
+}

@@ -1,40 +1,43 @@
+module.exports = {
+  book: {
+    assets: './dist/assets',
+    js: ['plugin.js', 'mermaid.min.js'],
+  },
+  hooks: {
+    'page:before': processMermaidBlockList,
+  },
+};
+
 const mermaidRegexMd = /^```mermaid((.*[\r\n]+)+?)?```$/im;
-const mermaidRegexAdoc = /^\[mermaid\]\n\.\.\.\.((.*[\r\n]+)+?)?\.\.\.\.$/im;
+const mermaidRegexAdoc = /^\[mermaid\]\r\n\.\.\.\.((.*[\r\n]+)+?)?\.\.\.\.$/im;
 
 function processMermaidBlockList(page) {
-  let match;
-  if (page.type === 'markdown') {
-    while ((match = mermaidRegexMd.exec(page.content))) {
-      const rawBlock = match[0];
-      const mermaidContent = match[1];
-      page.content = page.content.replace(
-        rawBlock,
-        '<div class="mermaid">' +
-          mermaidContent.replace('<|--', 'class_diagram_inheritance') +
-          '</div>'
-      );
+  let matched;
+  if (isPageTypeMarkdown(page.type)) {
+    while ((matched = mermaidRegexMd.exec(page.content))) {
+      page.content = replaceMatchedContent(matched, page.content, page.type);
     }
-  } else if (page.type === 'asciidoc') {
-    while ((match = mermaidRegexAdoc.exec(page.content))) {
-      const rawBlock = match[0];
-      const mermaidContent = match[1];
-      page.content = page.content.replace(
-        rawBlock,
-        '+++<div class="mermaid">' +
-          mermaidContent.replace('<|--', 'class_diagram_inheritance') +
-          '</div>+++'
-      );
+  } else {
+    while ((matched = mermaidRegexAdoc.exec(page.content))) {
+      page.content = replaceMatchedContent(matched, page.content, page.type);
     }
   }
   return page;
 }
 
-module.exports = {
-  book: {
-    assets: './dist/assets',
-    js: ['plugin.js', 'mermaid.min.js']
-  },
-  hooks: {
-    'page:before': processMermaidBlockList
-  }
-};
+function replaceMatchedContent(matched, content, pageType) {
+  const asciidoctorRaw = isPageTypeMarkdown(pageType) ? '' : '+++';
+  const rawBlock = matched[0];
+  const mermaidContent = matched[1];
+  return content.replace(
+    rawBlock,
+    `${asciidoctorRaw}<div class="mermaid">${mermaidContent.replace(
+      '<|--',
+      'class_diagram_inheritance'
+    )}</div>${asciidoctorRaw}`
+  );
+}
+
+function isPageTypeMarkdown(pageType) {
+  return pageType === 'markdown';
+}
