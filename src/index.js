@@ -9,7 +9,8 @@ module.exports = {
 };
 
 const mermaidRegexMd = /^```mermaid((.*[\r\n]+)+?)?```$/im;
-const mermaidRegexAdoc = /^\[mermaid\]\r\n\.\.\.\.((.*[\r\n]+)+?)?\.\.\.\.$/im;
+const mermaidRegexAdoc =
+  /^\[mermaid\][\r\n]+\.\.\.\.((.*[\r\n]+)+?)?\.\.\.\.$/im;
 
 function processMermaidBlockList(page) {
   let matched;
